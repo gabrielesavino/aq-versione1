@@ -27,7 +27,7 @@ for (let i = 0; i < 22; i++) { const s = document.createElement('i'); s.style.cs
 const img = (src, alt = '') => src ? `<img src="${esc(src)}" alt="${esc(alt)}" loading="lazy" onerror="this.outerHTML='<div class=ph>♥</div>'">` : '<div class="ph">♥</div>';
 const paper = (titolo, testo) => {
   const ps = String(testo).trim().split(/\n\s*\n/);
-  return `<div class="paper"><h2>${esc(titolo)}</h2>${ps.map((p, i) => `<p class="${i === ps.length - 1 && ps.length > 1 && p.length < 40 ? 'sign' : ''}" style="animation-delay:${.3 + i * .5}s">${esc(p).replace(/\n/g, '<br>')}</p>`).join('')}</div>`;
+  return `<div class="paper"><h2>${esc(titolo)}</h2>${ps.map((p, i) => `<p class="${i === ps.length - 1 && ps.length > 1 && p.length < 40 ? 'sign' : ''}" style="animation-delay:${.3 + i * .15}s">${esc(p).replace(/\n/g, '<br>')}</p>`).join('')}</div>`;
 };
 const back = (to, label) => `<a class="back" href="#/${to}">← ${label}</a>`;
 const open = (el, go) => { if (reduce) return go(); el.classList.add('open'); setTimeout(go, 1100); };
